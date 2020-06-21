@@ -3,7 +3,10 @@ import 'package:flutter_demo_platform_channel/channel/basic_message.dart';
 import 'package:flutter_demo_platform_channel/channel/event_channel.dart';
 import 'package:flutter_demo_platform_channel/channel/method_channel.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DemoEventChannel(),
+      home: DemoMethodChannel(),
     );
   }
 }
